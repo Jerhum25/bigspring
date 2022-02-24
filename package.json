@@ -1,0 +1,10 @@
+{
+  "name": "bigspring",
+  "version": "1.0.0",
+  "description": "**Le context :** Vous êtes intégrateur dans une agence web. Le pôle créa vient de vous livrer une maquette au format jpg. Vous avez 3h pour intégrer cette maquette au format HTML/CSS en priorisant la version mobile pour une présentation au client.",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "sass --watch ./sass/main.scss:./css/style.css"  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,401 @@
+@charset "UTF-8";
+/*GLOBAL RESET*/
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Début du code */
+/* GENERAL */
+body {
+  font-family: Lato;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  font-size: 16px;
+}
+
+.turquoise_button {
+  padding: 20px 35px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  color: #fff;
+  background: #0AA8A7;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.9s;
+}
+.turquoise_button:hover {
+  background: #EDF6F5;
+  color: #0AA8A7;
+  font-weight: bold;
+  transition: 0.9s;
+}
+
+@keyframes slide {
+  0% {
+    padding: 20px;
+  }
+  50% {
+    padding: 20px 200px;
+  }
+  100% {
+    padding: 20px;
+  }
+}
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  /* burger menu */
+}
+header input {
+  display: none;
+}
+header nav {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+  background: #444444;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  border-radius: 15px 0 0 15px;
+  height: 0;
+}
+header nav a {
+  display: none;
+  color: #0AA8A7;
+  line-height: 45px;
+  font-size: 20px;
+}
+header #lab {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  cursor: pointer;
+}
+header #lab .ligne {
+  width: 30px;
+  height: 4px;
+  background: #000;
+}
+header #lab .ligne::before, header #lab .ligne::after {
+  content: "";
+  width: 30px;
+  height: 4px;
+  background: #000;
+  position: absolute;
+}
+header #lab .ligne::before {
+  transform: translateY(-11px);
+}
+header #lab .ligne::after {
+  transform: translateY(11px);
+}
+header #ch:checked + #lab .ligne {
+  width: 0;
+  transition: 0.3s;
+}
+header #ch:checked + #lab .ligne::before {
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+header #ch:checked + #lab .ligne::after {
+  transform: rotate(-45deg);
+  transition: 0.3s;
+}
+header #ch:checked + #lab + nav {
+  height: auto;
+  padding: 30px 50px;
+  transition: all 0.5s;
+}
+header #ch:checked + #lab + nav a {
+  display: flex;
+}
+
+/* MAIN */
+main .title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+main .title h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+main .title button {
+  margin: 20px 0;
+}
+main .title img {
+  width: 100%;
+}
+main .something_you_need {
+  padding: 20px;
+  text-align: center;
+  background: #EDF6F5;
+  margin-bottom: 30px;
+}
+main .something_you_need div {
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+}
+main .something_you_need div #Capa_1 {
+  width: 40px;
+  height: 40px;
+  fill: #0AA8A7;
+}
+main .something_you_need div h3 {
+  margin: 15px 0;
+}
+main .description {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+main .description img {
+  width: 100%;
+}
+main .description img, main .description p, main .description h2 {
+  margin-bottom: 20px;
+}
+main .description a {
+  color: #0AA8A7;
+}
+main .privately {
+  background: #EDF6F5;
+}
+main .ready {
+  margin: 0 20px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #EDF6F5;
+  border-radius: 10px;
+}
+main .ready img {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+main .ready img, main .ready h2, main .ready p, main .ready button {
+  margin-bottom: 20px;
+}
+main .ready div {
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  background: #EDF6F5;
+}
+footer .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .links .link {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+footer .links .link img, footer .links .link h2 {
+  margin-bottom: 15px;
+}
+footer .links .link a {
+  margin-bottom: 10px;
+}
+footer .links .link img {
+  width: 140px;
+}
+footer .links .link .social_media {
+  margin-top: 10px;
+}
+footer .links .link .social_media a {
+  width: 15px;
+  margin-right: 10px;
+}
+footer .links .link .social_media a svg {
+  width: 25px;
+  height: 25px;
+  fill: #0AA8A7;
+}
+footer .footer_line {
+  display: block;
+  width: 90%;
+  height: 1px;
+  background: lightgrey;
+  margin: 10px auto;
+}
+footer .copyright {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+  header #lab {
+    display: none;
+  }
+  header nav {
+    flex-direction: row;
+    background: none;
+    position: unset;
+    animation: none;
+    transform: none;
+    transition: none;
+    padding: 0;
+  }
+  header nav a {
+    color: #000;
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 992px) {
+  h2 {
+    font-size: 30px;
+    text-align: left;
+  }
+
+  header {
+    padding: 30px 100px;
+  }
+
+  main .title {
+    width: 70%;
+    margin: auto;
+  }
+  main .something_you_need {
+    padding: 0 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "a b c" "a d e";
+  }
+  main .something_you_need h2:nth-child(1) {
+    grid-area: a;
+    margin-right: 10px;
+    margin-top: 15px;
+  }
+  main .something_you_need div:nth-child(2) {
+    grid-area: b;
+    margin: 10px;
+  }
+  main .something_you_need div:nth-child(3) {
+    grid-area: c;
+    margin: 10px;
+  }
+  main .something_you_need div:nth-child(4) {
+    grid-area: d;
+    margin: 10px;
+  }
+  main .something_you_need div:nth-child(5) {
+    grid-area: e;
+    margin: 10px;
+  }
+  main .description {
+    padding: 20px 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  main .description img, main .description div {
+    width: 50%;
+  }
+  main .privately {
+    flex-direction: row-reverse;
+  }
+  main .ready {
+    width: 60%;
+    margin: 50px auto;
+    flex-direction: row;
+  }
+  main .ready img, main .ready div {
+    width: 50%;
+  }
+
+  footer .links {
+    justify-content: space-around;
+  }
+  footer .links .link {
+    width: 20%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

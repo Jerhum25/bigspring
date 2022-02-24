@@ -1,0 +1,408 @@
+/*GLOBAL RESET*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Début du code */
+
+/* GENERAL */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$Noir: #222222;
+$Gris: #444444;
+$Vert: #0AA8A7;
+$Vert_clair: #EDF6F5;
+
+body{
+	font-family: Lato;
+}
+h2{
+	font-size: 20px;
+	font-weight: bold;
+}
+h3{
+	font-size: 18px;
+	font-weight: bold;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+p{
+	font-size: 16px;
+}
+
+.turquoise_button{
+	padding: 20px 35px;
+	border-radius: 30px;
+	outline: none;
+	border: none;
+	color: #fff;
+	background: $Vert;
+	font-size: 16px;
+	cursor: pointer;
+	transition: 0.9s;
+
+	&:hover{
+		background: $Vert_clair;
+		color: $Vert;
+		font-weight: bold;
+		transition: 0.9s;
+	}
+}
+
+@keyframes slide {
+	0% {
+	  padding: 20px;
+	}
+	50% {
+	  padding: 20px 200px;
+	}
+	100% {
+	  padding: 20px;
+	}
+  }
+
+/* HEADER */
+header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	input{
+		display: none;
+	}
+	nav{
+		display: flex;
+		flex-direction: column;
+		transition: all 0.5s;
+		background: $Gris;
+		position: absolute;
+		top: 70px;
+		right: 0;
+		border-radius: 15px 0 0 15px;
+		height: 0;
+		a{
+			display: none;
+			color: $Vert;
+			line-height: 45px;
+			font-size: 20px;
+
+		}
+	}
+	/* burger menu */
+	#lab {
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		margin: 5px;
+		cursor: pointer;
+	  }
+	  #lab .ligne {
+		width: 30px;
+		height: 4px;
+		background: #000;
+	  }
+	  #lab .ligne::before, #lab .ligne::after {
+		content: "";
+		width: 30px;
+		height: 4px;
+		background: #000;
+		position: absolute;
+	  }
+	  #lab .ligne::before {
+		transform: translateY(-11px);
+	  }
+	  #lab .ligne::after {
+		transform: translateY(11px);
+	  }
+	  #ch:checked + #lab .ligne {
+		width: 0;
+		transition: 0.3s;
+	  }
+	  #ch:checked + #lab .ligne::before {
+		transform: rotate(45deg);
+		transition: 0.3s;
+	  }
+	  #ch:checked + #lab .ligne::after {
+		transform: rotate(-45deg);
+		transition: 0.3s;
+	  }
+	  #ch:checked + #lab + nav {
+		  height: auto;
+		  padding: 30px 50px;
+		  transition: all 0.5s;
+	  }
+ #ch:checked + #lab + nav a{
+	display: flex;
+ }
+
+}
+
+/* MAIN */
+main{
+	.title{
+		text-align: center;
+		margin-bottom: 30px;
+		h1{
+			font-size: 40px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+		button{
+			margin: 20px 0;
+		}
+		img{
+			width: 100%;
+		}
+
+	}
+	.something_you_need{
+		padding: 20px;
+		text-align: center;
+		background: $Vert_clair;
+		margin-bottom: 30px;
+		div{
+			background: #fff;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+			padding: 20px;
+			#Capa_1{
+				width: 40px;
+				height: 40px;
+				fill: $Vert;
+			}
+			h3{
+				margin: 15px 0;
+			}
+		}
+	}
+	.description{
+		padding: 20px;
+		margin-bottom: 30px;
+		img{
+			width: 100%;
+		}
+		img, p, h2{
+			margin-bottom: 20px;
+		}
+		a{
+			color: $Vert;
+		}
+	}
+	.privately{
+		background: $Vert_clair;
+	}
+	.ready{
+		margin: 0 20px 30px 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background: $Vert_clair;
+		border-radius: 10px;
+		img{ 
+			width: 100%;
+			text-align: center;
+			margin-top: 20px;
+		}
+		img, h2, p, button{
+			margin-bottom: 20px;
+		}
+		div{
+			text-align: center;
+		}
+	}
+}
+
+/* FOOTER */
+footer{
+	display: flex;
+	flex-direction: column;
+	padding: 30px 20px;
+	background: $Vert_clair;
+	.links{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.link{
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 20px;
+			img, h2{
+				margin-bottom: 15px;
+			}
+			a{
+				margin-bottom: 10px;
+			}
+			img{
+				width: 140px;
+			}
+			.social_media{
+				margin-top: 10px;
+				a{
+					width: 15px;
+					margin-right: 10px;
+					svg{
+						width: 25px;
+						height: 25px;
+						fill: $Vert;
+					}
+				}
+			}
+		}
+	}
+	.footer_line{
+		display: block;
+		width: 90%;
+		height: 1px;
+		background: lightgrey;
+		margin: 10px auto;
+	}
+	.copyright{
+		text-align: center;
+	}
+}
+
+
+@media screen and (min-width: 768px){
+	header{
+		#lab{
+			display: none;
+		}
+		justify-content: space-between;
+		nav{
+			flex-direction: row;
+			background: none;
+			position: unset;
+			animation: none;
+			transform: none;
+			transition: none;
+			padding: 0;
+			a{
+				color: #000;
+				margin-left: 20px;
+
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px){
+	h2{
+		font-size: 30px;
+		text-align: left;
+	}
+	header{
+		padding: 30px 100px;
+	}
+	main{
+		.title{
+			width: 70%;
+			margin: auto;
+		}
+		.something_you_need{
+			padding: 0 200px;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			grid-template-areas:"a b c" "a d e";
+			h2:nth-child(1) {
+				grid-area: a;
+				margin-right: 10px;
+				margin-top: 15px;
+			}
+			div:nth-child(2) {
+				grid-area: b;
+				margin:  10px;
+			}
+			div:nth-child(3) {
+				grid-area: c;
+				margin:  10px;
+			}
+			div:nth-child(4) {
+				grid-area: d;
+				margin:  10px;
+			}
+			div:nth-child(5) {
+				grid-area: e;
+				margin:  10px;
+			}
+		}
+		.description{
+			padding: 20px 200px;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			img, div{
+				width: 50%;
+			}
+		}
+		.privately{
+			flex-direction: row-reverse;
+		}
+		.ready{
+			width: 60%;
+			margin: 50px auto;
+			flex-direction: row;
+			img, div{
+				width: 50%;
+			}
+
+		}
+	}
+	footer{
+		.links{
+			justify-content: space-around;
+			.link{
+				width: 20%;
+			}
+		}
+	}
+}
